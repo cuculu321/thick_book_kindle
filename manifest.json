@@ -1,5 +1,5 @@
 {
-  "name": "think book kindle",
+  "name": "thick book kindle",
   "description": "Amazonの本の厚さを表示します。",
   "version": "1.0",
   "manifest_version": 3,
@@ -11,8 +11,8 @@
   "content_scripts": [
     {
       "matches": ["https://www.amazon.co.jp/*"],
-      "css": ["book_think.css"],
-      "js": ["display_think_of_book.js"]
+      "css": ["book_thick.css"],
+      "js": ["display_thick_of_book.js"]
     }
   ],
   "permissions": [

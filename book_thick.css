@@ -1,15 +1,15 @@
-.book_think {
+.book_thick {
     display: flex;
 }
 
-.book_think_left {
+.book_thick_left {
     flex-grow: 10;
     border-top: solid 3px #000000;
     border-left: solid 3px #000000;
     border-bottom: solid 3px #000000;
 }
 
-.book_think_right {
+.book_thick_right {
     border-left: solid 3px #000000;
     border-radius: 90%;
 }

@@ -1,29 +1,38 @@
 attachView(createView(getPageOfBook()));
 
+/**
+ * ビューHTMLをDOMに追加
+ * @param view
+ */
 function attachView(view){
     const image_block = document.getElementById("imageBlockNew_feature_div");
     image_block.appendChild(view);
 }
 
-function createView(think){
-    const view_book_think = document.createElement("div");
-    view_book_think.className = "book_think";
+/**
+ * ビューHTMLを作成
+ * @param thick
+ * @returns {HTMLDivElement}
+ */
+function createView(thick){
+    const view_book_thick = document.createElement("div");
+    view_book_thick.className = "book_thick";
 
     const view_child_left = document.createElement("div");
-    view_child_left.className = "book_think_left";
-    view_child_left.style.paddingTop = think/2 + "mm"
-    view_child_left.style.paddingBottom = think/2 + "mm"
-    view_book_think.appendChild(view_child_left);
+    view_child_left.className = "book_thick_left";
+    view_child_left.style.paddingTop = thick/2 + "mm"
+    view_child_left.style.paddingBottom = thick/2 + "mm"
+    view_book_thick.appendChild(view_child_left);
 
     const view_child_right = document.createElement("div");
-    view_child_right.className = "book_think_right";
-    view_child_right.style.paddingTop = think/2 + "mm"
-    view_child_right.style.paddingBottom = think/2 + "mm"
-    view_child_right.style.paddingLeft= think/4 + "mm"
-    view_child_right.style.marginLeft = "-" + think/2 + "px"
-    view_book_think.appendChild(view_child_right);
+    view_child_right.className = "book_thick_right";
+    view_child_right.style.paddingTop = thick/2 + "mm"
+    view_child_right.style.paddingBottom = thick/2 + "mm"
+    view_child_right.style.paddingLeft= thick/4 + "mm"
+    view_child_right.style.marginLeft = "-" + thick/2 + "px"
+    view_book_thick.appendChild(view_child_right);
 
-    return view_book_think;
+    return view_book_thick;
 }
 
 /**
@@ -57,7 +66,7 @@ function removeStringInBookThinkInfo(book_page_string){
  * 使う紙によってかなり厚みが異なるが、今のAmazonの仕様的に使用される紙まで特定するのは不可能
  * そのため仮置きで0.8mmとして扱う
  * @param page ページ数
- * @returns int think 単位はmm
+ * @returns int thick 単位はmm
  */
 function convertPageToThink(page){
     // const JYOUSHITSU_70K = 0.1;
