@@ -1,16 +1,18 @@
 {
-  "name": "think book kindle",
-  "description": "Amazonの本の厚さを表示します。",
+  "name": "thick book kindle",
+  "description": "Amazonの本の厚さを表示します。1ページ0.08mmとして換算しているため、実際とは異なる可能性があります。",
   "version": "1.0",
   "manifest_version": 3,
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
   "content_scripts": [
     {
       "matches": ["https://www.amazon.co.jp/*"],
-      "css": ["book_think.css"],
-      "js": ["display_think_of_book.js"]
+      "css": ["book_thick.css"],
+      "js": ["display_thick_of_book.js"]
     }
-  ],
-  "permissions": [
-    "tabs"
   ]
 }
