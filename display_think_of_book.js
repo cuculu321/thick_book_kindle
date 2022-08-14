@@ -7,11 +7,21 @@ function attachView(view){
 }
 
 function createView(think){
-    const view = document.createElement("div")
-    view.className = "book_think";
-    view.style.padding = think/2 + "mm" + " " + think/2 + "mm"
+    const view_book_think = document.createElement("div");
+    view_book_think.className = "book_think";
 
-    return view;
+    const view_child_left = document.createElement("div");
+    view_child_left.className = "book_think_left";
+    view_child_left.style.padding = think/2 + "mm" + " " + think/2 + "mm"
+    view_book_think.appendChild(view_child_left);
+
+    const view_child_right = document.createElement("div");
+    view_child_right.className = "book_think_right";
+    view_child_right.style.padding = think/2 + "mm" + " " + think/2 + "mm"
+    view_child_right.style.marginLeft = "-17px"
+    view_book_think.appendChild(view_child_right);
+
+    return view_book_think;
 }
 
 /**
