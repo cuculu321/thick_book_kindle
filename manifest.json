@@ -1,0 +1,15 @@
+{
+  "name": "think book kindle",
+  "description": "Amazonの本の厚さを表示します。",
+  "version": "1.0",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": [],
+      "js": ["display_think_of_book"]
+    }
+  ],
+  "permissions": [
+    "tabs"
+  ]
+}
