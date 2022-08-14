@@ -1,20 +1,28 @@
-console.log(getThinkOfBook());
+console.log(getPageOfBook());
 
-function getThinkOfBook() {
+/**
+ * ページ数を取得する
+ * @returns {string|null} ページ情報が取得できた場合ページ数を、ない場合はnullを返す
+ */
+function getPageOfBook() {
     const THINK_INFO_POSITION_IN_BOOK_INFO = 0;
     let book_info = document.getElementById("rich_product_information");
-    let book_size = book_info.getElementsByClassName("a-declarative");
-    let book_think_element = book_size[THINK_INFO_POSITION_IN_BOOK_INFO].getElementsByTagName("span")[0];
-    let book_think_string = book_think_element.innerText;
+    if(book_info === null) {
+        return null;
+    }
 
-    return removeStringInBookThinkInfo(book_think_string);
+    let book_size = book_info.getElementsByClassName("a-declarative");
+    let book_page_element = book_size[THINK_INFO_POSITION_IN_BOOK_INFO].getElementsByTagName("span")[0];
+    let book_page_string = book_page_element.innerText;
+
+    return removeStringInBookThinkInfo(book_page_string);
 }
 
 /**
  * 「XXXページ」というように取得されるため、ページという文字列を削除する
- * @param book_think_string spanタグから取得した文字列
+ * @param book_page_string spanタグから取得した文字列
  * @returns string
  */
-function removeStringInBookThinkInfo(book_think_string){
-    return book_think_string.slice(0, -3);
+function removeStringInBookThinkInfo(book_page_string){
+    return book_page_string.slice(0, -3);
 }
