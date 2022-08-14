@@ -1,4 +1,5 @@
-attachView(createView(getPageOfBook()));
+let think = convertPageToThink(getPageOfBook());
+attachView(createView(think));
 
 /**
  * ビューHTMLをDOMに追加
@@ -6,7 +7,7 @@ attachView(createView(getPageOfBook()));
  */
 function attachView(view){
     const image_block = document.getElementById("imageBlockNew_feature_div");
-    image_block.appendChild(view);
+    image_block.append(view);
 }
 
 /**
@@ -50,7 +51,7 @@ function getPageOfBook() {
     let book_page_element = book_size[THINK_INFO_POSITION_IN_BOOK_INFO].getElementsByTagName("span")[0];
     let book_page_string = book_page_element.innerText;
 
-    return parseInt(removeStringInBookThinkInfo(book_page_string)) / 10;
+    return parseInt(removeStringInBookThinkInfo(book_page_string));
 }
 
 /**
@@ -70,6 +71,6 @@ function removeStringInBookThinkInfo(book_page_string){
  */
 function convertPageToThink(page){
     // const JYOUSHITSU_70K = 0.1;
-    const ROUGHLY_THINK_PER_A_PAGE = 0.8;
+    const ROUGHLY_THINK_PER_A_PAGE = 0.08;
     return ROUGHLY_THINK_PER_A_PAGE * page;
 }
