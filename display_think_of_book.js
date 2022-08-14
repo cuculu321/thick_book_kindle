@@ -1,25 +1,22 @@
 console.log(convertPageToThink(getPageOfBook()));
-attachView(createView());
+attachView(createView(10));
 
 function attachView(view){
     const image_block = document.getElementById("imageBlockNew_feature_div");
     image_block.appendChild(view);
 }
 
-function createView(){
+function createView(think){
     const view = document.createElement("div")
-    view.className = "box1";
-    const text = document.createElement("p");
-    text.innerText = "hoge";
-
-    view.appendChild(text);
+    view.className = "book_think";
+    view.style.padding = think/2 + "mm" + " " + think/2 + "mm"
 
     return view;
 }
 
 /**
  * ページ数を取得する
- * @returns {string|null} ページ情報が取得できた場合ページ数を、ない場合はnullを返す
+ * @returns {number|null} ページ情報が取得できた場合ページ数を、ない場合はnullを返す
  */
 function getPageOfBook() {
     const THINK_INFO_POSITION_IN_BOOK_INFO = 0;
@@ -32,7 +29,7 @@ function getPageOfBook() {
     let book_page_element = book_size[THINK_INFO_POSITION_IN_BOOK_INFO].getElementsByTagName("span")[0];
     let book_page_string = book_page_element.innerText;
 
-    return removeStringInBookThinkInfo(book_page_string);
+    return parseInt(removeStringInBookThinkInfo(book_page_string));
 }
 
 /**
