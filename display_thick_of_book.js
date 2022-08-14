@@ -1,5 +1,13 @@
-let think = convertPageToThink(getPageOfBook());
-attachView(createView(think));
+main();
+
+function main() {
+    let page = getPageOfBook();
+    if (page === null) {
+        return false;
+    }
+    let think = convertPageToThink(page);
+    attachView(createView(think));
+}
 
 /**
  * ビューHTMLをDOMに追加
