@@ -1,4 +1,21 @@
 console.log(convertPageToThink(getPageOfBook()));
+attachView(createView());
+
+function attachView(view){
+    const image_block = document.getElementById("imageBlockNew_feature_div");
+    image_block.appendChild(view);
+}
+
+function createView(){
+    const view = document.createElement("div")
+    view.className = "box1";
+    const text = document.createElement("p");
+    text.innerText = "hoge";
+
+    view.appendChild(text);
+
+    return view;
+}
 
 /**
  * ページ数を取得する
