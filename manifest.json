@@ -1,6 +1,6 @@
 {
   "name": "thick book kindle",
-  "description": "Amazonの本の厚さを表示します。",
+  "description": "Amazonの本の厚さを表示します。1ページ0.08mmとして換算しているため、実際とは異なる可能性があります。",
   "version": "1.0",
   "manifest_version": 3,
   "icons": {
