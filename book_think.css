@@ -3,14 +3,13 @@
 }
 
 .book_think_left {
-    font-weight: bold;
+    flex-grow: 10;
     border-top: solid 3px #000000;
     border-left: solid 3px #000000;
     border-bottom: solid 3px #000000;
 }
 
 .book_think_right {
-    font-weight: bold;
     border-left: solid 3px #000000;
-    border-radius: 70%;
+    border-radius: 90%;
 }
