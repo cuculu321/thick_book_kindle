@@ -1,4 +1,4 @@
-console.log(getPageOfBook());
+console.log(convertPageToThink(getPageOfBook()));
 
 /**
  * ページ数を取得する
@@ -25,4 +25,16 @@ function getPageOfBook() {
  */
 function removeStringInBookThinkInfo(book_page_string){
     return book_page_string.slice(0, -3);
+}
+
+/**
+ * 使う紙によってかなり厚みが異なるが、今のAmazonの仕様的に使用される紙まで特定するのは不可能
+ * そのため仮置きで0.8mmとして扱う
+ * @param page ページ数
+ * @returns int think 単位はmm
+ */
+function convertPageToThink(page){
+    // const JYOUSHITSU_70K = 0.1;
+    const ROUGHLY_THINK_PER_A_PAGE = 0.8;
+    return ROUGHLY_THINK_PER_A_PAGE * page;
 }
