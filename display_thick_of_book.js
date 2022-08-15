@@ -49,17 +49,22 @@ function createView(thick){
  * @returns {number|null} ページ情報が取得できた場合ページ数を、ない場合はnullを返す
  */
 function getPageOfBook() {
-    const THINK_INFO_POSITION_IN_BOOK_INFO = 0;
-    let book_info = document.getElementById("rich_product_information");
+    const TITLE_BOOK_PAGE = "本の長さ";
+    let book_info_parent = document.getElementById("detailBullets_feature_div");
+    let book_info = book_info_parent.getElementsByClassName("a-unordered-list")[0];
     if(book_info === null) {
         return null;
     }
 
-    let book_size = book_info.getElementsByClassName("a-declarative");
-    let book_page_element = book_size[THINK_INFO_POSITION_IN_BOOK_INFO].getElementsByTagName("span")[0];
-    let book_page_string = book_page_element.innerText;
-
-    return parseInt(removeStringInBookThinkInfo(book_page_string));
+    let book_info_tags = book_info.getElementsByClassName("a-list-item");
+    for (const book_info_tag of book_info_tags) {
+        let book_info_tag_spans = book_info_tag.getElementsByTagName("span");
+        let book_info_tag_title = book_info_tag_spans[0].innerText;
+        if(book_info_tag_title.slice(0, 4) === TITLE_BOOK_PAGE) {
+            return parseInt(removeStringInBookThinkInfo(book_info_tag_spans[1].innerText));
+        }
+    }
+    return null;
 }
 
 /**
