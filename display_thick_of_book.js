@@ -14,7 +14,7 @@ function main() {
  * @param view
  */
 function attachView(view){
-    const image_block = document.getElementById("imageBlockNew_feature_div");
+    const image_block = document.getElementById("imageBlock");
     image_block.append(view);
 }
 
