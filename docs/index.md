@@ -1,4 +1,4 @@
-# Privacy policy for Chrome extensions developed by test
+# Privacy policy for Chrome extensions for thick book kindle
 ## Chrome拡張のプライバシーポリシー
 
 本プライバシーポリシーは、cuculu321が開発したGoogleChromeの拡張機能(Extension)である`thick book kindle`(以下、「拡張機能」とします。)の利用において、利用者の個人情報もしくはそれに準ずる情報を取り扱う際に、当開発者が遵守する方針を示したものです。
